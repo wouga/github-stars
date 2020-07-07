@@ -4,8 +4,6 @@ import clsx from 'clsx';
 import { Drawer, IconButton, Divider, List, makeStyles } from '@material-ui/core';
 
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import CodeIcon from '@material-ui/icons/Code';
-import { JsIcon, PythonIcon, TsIcon, JavaIcon } from '../resources/icons';
 
 import { MenuItem } from './menu-item';
 import { menuItems } from './repo/menu.config';
