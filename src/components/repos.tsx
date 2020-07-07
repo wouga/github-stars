@@ -22,7 +22,7 @@ export const Repos = () => {
 
     return (
         <>
-            {true && <LinearProgress color="secondary" />}
+            {isLoading && <LinearProgress color="secondary" />}
             <Container maxWidth="lg" className={classes.container}>
                 <Typography variant="h4" gutterBottom>
                     Github Repositories
