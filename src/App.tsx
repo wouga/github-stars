@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { CssBaseline } from '@material-ui/core';
+
 import './App.css';
+import { Header } from './components/header';
+import { MenuBar } from './components/menu-bar';
+import { Content } from './components/content';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isOpenBar, setIsOpenBar] = useState(true);
+    const openBar = () => setIsOpenBar(true);
+    const closeBar = () => setIsOpenBar(false);
+
+    return (
+        <Router>
+            <div className="app">
+                <CssBaseline />
+                <Header isOpenBar={isOpenBar} onOpenBarClick={openBar} />
+                <MenuBar isOpenBar={isOpenBar} onCloseBarClick={closeBar} />
+                <Content />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
